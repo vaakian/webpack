@@ -20,7 +20,7 @@ module.exports = {
 
   // suffix auto resolve
   resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
+    extensions: ['.ts', '.tsx', '.js', '.css'],
   },
 
   // my ts loader
@@ -29,6 +29,10 @@ module.exports = {
       {
         test: /\.tsx?/i,
         use: ['./loaders/tsLoader.js'],
+      },
+      {
+        test: /\.css$/i,
+        use: ['./loaders/styleLoader.js'],
       },
     ],
   },

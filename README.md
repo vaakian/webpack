@@ -6,7 +6,7 @@
 Purely transform the source file, and return the result. 
 
 ### Well-known loaders
-- **css-loader**: Load the css file.
+- **css-loader**: Load the css file(raw), resolve `@imports` and `url()`.
 - **style-loader**: Inject the style into the `head` tag.
 - **file-loader**: Load the file as raw.
 - **url-loader**: Load the file as base64 or relative url.
