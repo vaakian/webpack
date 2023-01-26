@@ -1,8 +1,8 @@
 
-export default function Card() {
+export default function Card({title = 'Webpack'}) {
   return (
     <div>
-      <h1>Card</h1>
+      <h1>{title}</h1>
     </div>
   );
 }
