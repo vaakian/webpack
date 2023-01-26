@@ -33,3 +33,12 @@ Chunk manifest is a mapping of chunk ids to chunk files. It is used by the runti
 # dynamic import process
 import => __webpack_require__ => manifest => load chunk
 ```
+
+
+## Other things
+
+1. **ts-loader**: resolve suffix
+2. **ProviderPlugin**: provide global variable
+3. **html-webpack-plugin**: generate html file that loads the entry file
+4. ***live-server**: serve the dist folder, `webpack --watch` will auto build to the dist folder
+5. **webpack-dev-server**: does the same as `4`, but does NOT generate the dist folder, serve the memory file instead
