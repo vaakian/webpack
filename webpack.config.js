@@ -10,9 +10,11 @@ module.exports = {
   },
   plugins: [
     // auto add React import
-    new webpack.ProvidePlugin({
-      React: 'react',
-    }),
+    // but after setting `'jsx': 'react-jsx'` in tsconfig.json, we don't need this plugin
+    // it's handled by ts-loader instead.
+    // new webpack.ProvidePlugin({
+    //   React: 'react',
+    // }),
     new htmlWebpackPlugin({
       template: './src/index.html',
     }),
@@ -28,7 +30,10 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?/i,
-        use: ['./loaders/tsLoader.js'],
+        use: [
+          './loaders/tsLoader.js',
+          // 'ts-loader'
+        ],
       },
       {
         test: /\.css$/i,
@@ -37,4 +42,5 @@ module.exports = {
     ],
   },
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
+  devtool: 'source-map',
 };
